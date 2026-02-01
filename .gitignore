@@ -29,3 +29,6 @@ build/
 # Cloned repositories (for development/testing)
 mainsail/
 virtual-klipper-printer/
+
+# Release artifacts
+mainsail.zip

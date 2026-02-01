@@ -28,21 +28,22 @@ KlipperSearch adds a global search feature to Mainsail that:
 
 ## Installation
 
-### Quick Start
-
 ```bash
 # On your Raspberry Pi
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
-sudo apt-get install -y nodejs
+ssh pi@YOUR_PRINTER_IP
 
-git clone -b develop https://github.com/mikehatch/mainsail.git
-cd mainsail
-npm ci && npm run build
+# Backup your current Mainsail
+cp -r ~/mainsail ~/mainsail.backup
 
-sudo cp -r dist/* /home/pi/mainsail/
+# Download and install KlipperSearch
+wget https://github.com/mikehatch/KlipperSearch/releases/latest/download/mainsail.zip
+unzip mainsail.zip -d mainsail-new
+sudo cp -r mainsail-new/* ~/mainsail/
 ```
 
-For detailed installation instructions, troubleshooting, and alternative methods, see [INSTALL.md](INSTALL.md).
+Then clear your browser cache (`Ctrl+Shift+R` or `Cmd+Shift+R`).
+
+For detailed instructions, troubleshooting, and reverting to official Mainsail, see [INSTALL.md](INSTALL.md).
 
 ## Usage
 
