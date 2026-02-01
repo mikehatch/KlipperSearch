@@ -32,3 +32,7 @@ virtual-klipper-printer/
 
 # Release artifacts
 mainsail.zip
+
+# Project planning files (local only)
+CLAUDE.md
+objectives.md
