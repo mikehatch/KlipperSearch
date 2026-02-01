@@ -15,7 +15,13 @@ KlipperSearch adds a global search feature to Mainsail that:
 - **Opens the file directly** at the matching line when you click a result
 - **Caches file contents** for fast subsequent searches
 
+![Search Button](docs/search-button.png)
 ![Search Dialog](docs/search-demo.png)
+![Demo](/docs/KlipperSearch-demo.mp4)
+<video src="docs/KlipperSearch-demo.mp4" width="100%" controls autoplay loop muted>
+  Your browser does not support the video tag.
+</video>
+
 
 ## Features
 
