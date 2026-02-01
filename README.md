@@ -17,11 +17,7 @@ KlipperSearch adds a global search feature to Mainsail that:
 
 ![Search Button](docs/search-button.png)
 ![Search Dialog](docs/search-demo.png)
-
-<video src="https://github.com/mikehatch/KlipperSearch/raw/main/docs/KlipperSearch-demo.mp4" controls loop muted>
-  Your browser does not support the video tag.
-</video>
-
+![Search Demo](docs/KlipperSearch-demo.gif)
 
 ## Features
 
