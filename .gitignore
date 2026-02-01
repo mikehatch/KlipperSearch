@@ -25,3 +25,7 @@ build/
 
 # Logs
 *.log
+
+# Cloned repositories (for development/testing)
+mainsail/
+virtual-klipper-printer/
