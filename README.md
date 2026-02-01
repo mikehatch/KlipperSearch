@@ -28,32 +28,21 @@ KlipperSearch adds a global search feature to Mainsail that:
 
 ## Installation
 
-See [INSTALL.md](INSTALL.md) for detailed installation instructions.
-
-### Quick Start (Build from Source)
-
-**On your Raspberry Pi:**
+### Quick Start
 
 ```bash
-# Install Node.js 20
+# On your Raspberry Pi
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
 sudo apt-get install -y nodejs
 
-# Clone the repository
 git clone -b develop https://github.com/mikehatch/mainsail.git
 cd mainsail
+npm ci && npm run build
 
-# Install dependencies and build
-npm ci
-npm run build
-
-# Copy to Mainsail web directory (adjust path as needed)
 sudo cp -r dist/* /home/pi/mainsail/
 ```
 
-### Quick Start (Pre-built)
-
-If you have access to a pre-built version, simply copy the `dist` folder contents to your Mainsail installation directory.
+For detailed installation instructions, troubleshooting, and alternative methods, see [INSTALL.md](INSTALL.md).
 
 ## Usage
 
@@ -110,62 +99,15 @@ This approach requires no backend modifications - it works with any existing Moo
 └─────────────────────────────────────────────────────────┘
 ```
 
-## File Structure
-
-```
-mainsail/src/
-├── store/search/
-│   ├── index.ts        # Store module definition
-│   ├── types.ts        # TypeScript interfaces
-│   ├── actions.ts      # Search logic, file fetching, caching
-│   ├── mutations.ts    # State mutations
-│   └── getters.ts      # Computed properties
-├── components/dialogs/
-│   └── ConfigSearchDialog.vue  # Search UI component
-└── components/
-    ├── TheTopbar.vue   # Modified - added search button
-    └── TheEditor.vue   # Modified - added line navigation
-```
-
 ## Development
 
-### Prerequisites
+Want to contribute or set up a development environment? See [DEVELOPMENT.md](DEVELOPMENT.md) for:
 
-- Node.js 20 or higher
-- npm
-
-### Setup
-
-```bash
-# Clone the fork
-git clone https://github.com/mikehatch/mainsail.git
-cd mainsail
-git checkout develop
-
-# Install dependencies
-npm ci
-
-# Configure for local development
-cp .env.development.local.example .env.development.local
-# Edit .env.development.local with your Moonraker host
-
-# Start dev server
-npm run serve
-```
-
-### Testing
-
-For testing without a physical printer, use the [virtual-klipper-printer](https://github.com/mainsail-crew/virtual-klipper-printer) Docker project.
-
-## Contributing
-
-This is a fork of Mainsail with the search feature added. Contributions are welcome!
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run `npm run lint` to check for issues
-5. Submit a pull request
+- File structure and architecture details
+- Development environment setup
+- Testing with virtual or physical printers
+- Code quality guidelines
+- Contribution workflow
 
 ## License
 
