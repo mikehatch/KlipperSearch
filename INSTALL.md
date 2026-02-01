@@ -12,31 +12,18 @@ This guide will help you install KlipperSearch on your Klipper printer.
 
 ## Installation
 
-### Step 1: Backup Existing Mainsail
-
-Before installing, create a backup of your current Mainsail installation:
+### Step 1: Backup and Download
 
 ```bash
 ssh pi@YOUR_PRINTER_IP
-cp -r ~/mainsail ~/mainsail.backup
-```
-
-### Step 2: Download and Extract
-
-Download the latest release and extract it:
-
-```bash
 cd ~
+
+# Backup existing Mainsail (move it instead of copy for speed)
+mv ~/mainsail ~/mainsail.backup
+
+# Download and extract the latest release
 wget https://github.com/mikehatch/KlipperSearch/releases/latest/download/mainsail.zip
-unzip mainsail.zip -d mainsail-new
-```
-
-### Step 3: Deploy
-
-Copy the new files to your Mainsail directory:
-
-```bash
-sudo cp -r mainsail-new/* ~/mainsail/
+unzip mainsail.zip -d ~/mainsail
 ```
 
 **If your Mainsail is in a different location**, find it first:
@@ -48,11 +35,12 @@ cat /etc/nginx/sites-enabled/mainsail 2>/dev/null | grep root
 # Or search for it
 find /home -name "mainsail" -type d 2>/dev/null
 
-# Then copy to that location
-sudo cp -r mainsail-new/* /path/to/mainsail/
+# Then use that path instead of ~/mainsail
+mv /path/to/mainsail /path/to/mainsail.backup
+unzip mainsail.zip -d /path/to/mainsail
 ```
 
-### Step 4: Clear Browser Cache
+### Step 2: Clear Browser Cache
 
 Open your Mainsail URL in a browser and do a hard refresh:
 - **Windows/Linux**: `Ctrl+Shift+R`
@@ -110,16 +98,17 @@ sudo apt-get install -y wget unzip
 
 ## Updating
 
-To update to the latest version, repeat the installation steps:
+To update to the latest version:
 
 ```bash
-# Download latest release
 cd ~
-wget https://github.com/mikehatch/KlipperSearch/releases/latest/download/mainsail.zip
-unzip -o mainsail.zip -d mainsail-new
 
-# Deploy
-sudo cp -r mainsail-new/* ~/mainsail/
+# Backup current version
+mv ~/mainsail ~/mainsail.backup
+
+# Download and install latest release
+wget https://github.com/mikehatch/KlipperSearch/releases/latest/download/mainsail.zip
+unzip mainsail.zip -d ~/mainsail
 ```
 
 Then clear your browser cache.

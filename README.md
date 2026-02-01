@@ -31,14 +31,12 @@ KlipperSearch adds a global search feature to Mainsail that:
 ```bash
 # On your Raspberry Pi
 ssh pi@YOUR_PRINTER_IP
+cd ~
 
-# Backup your current Mainsail
-cp -r ~/mainsail ~/mainsail.backup
-
-# Download and install KlipperSearch
+# Backup and install
+mv ~/mainsail ~/mainsail.backup
 wget https://github.com/mikehatch/KlipperSearch/releases/latest/download/mainsail.zip
-unzip mainsail.zip -d mainsail-new
-sudo cp -r mainsail-new/* ~/mainsail/
+unzip mainsail.zip -d ~/mainsail
 ```
 
 Then clear your browser cache (`Ctrl+Shift+R` or `Cmd+Shift+R`).
